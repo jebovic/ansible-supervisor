@@ -1,6 +1,8 @@
 Supervisor
 ==========
 
+[![Build Status](https://travis-ci.org/jebovic/ansible-supervisor.svg?branch=master)](https://travis-ci.org/jebovic/ansible-supervisor)
+
 Install and configure supervisor, you can add your own programs with yaml variables
 
 Role Variables
