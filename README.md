@@ -1,7 +1,7 @@
 Supervisor
 ==========
 
-[![Build Status](https://travis-ci.org/jebovic/ansible-supervisor.svg?branch=master)](https://travis-ci.org/jebovic/ansible-supervisor)
+[![Build Status](https://travis-ci.org/jebovic/ansible-supervisor.svg?branch=master)](https://travis-ci.org/jebovic/ansible-supervisor) [![Ansible Galaxy](https://img.shields.io/badge/galaxy-jebovic.supervisor-blue.svg?style=flat)](https://galaxy.ansible.com/jebovic/supervisor)
 
 Install and configure supervisor, you can add your own programs with yaml variables
 
