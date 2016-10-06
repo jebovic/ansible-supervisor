@@ -3,7 +3,8 @@
   remote_user: root
   roles:
     - role_under_test
-  supervisor_programs:
-    helloworld:
-      command: cat /etc/os-release
-      autostart: "true"
+  vars:
+    supervisor_programs:
+      helloworld:
+        command: /bin/cat /etc/os-release
+        exitcodes: 0,1,2
