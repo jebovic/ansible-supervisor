@@ -7,4 +7,5 @@
     supervisor_programs:
       helloworld:
         command: /bin/cat /etc/os-release
+        autostart: "false"
         exitcodes: 0,1,2
