@@ -6,6 +6,6 @@
   vars:
     supervisor_programs:
       helloworld:
-        command: /bin/cat /etc/os-release
+        command: /bin/cat
         autostart: "false"
-        exitcodes: 0,1,2
+        autorestart: "false"
