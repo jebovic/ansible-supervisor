@@ -30,7 +30,7 @@ script:
   - docker exec --tty "$(cat ${container_id})" env TERM=xterm systemctl --no-pager status supervisor
   - docker exec --tty "$(cat ${container_id})" env TERM=xterm systemctl --no-pager stop supervisor
   - docker exec --tty "$(cat ${container_id})" env TERM=xterm systemctl --no-pager start supervisor
-  - docker exec --tty "$(cat ${container_id})" env TERM=xterm supervisorctl helloworld start
+  - docker exec --tty "$(cat ${container_id})" env TERM=xterm supervisorctl start helloworld
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
