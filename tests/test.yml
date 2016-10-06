@@ -3,3 +3,7 @@
   remote_user: root
   roles:
     - role_under_test
+  supervisor_programs:
+    helloworld:
+      command: cat /etc/os-release
+      autostart: "true"
