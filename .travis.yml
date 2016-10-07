@@ -37,7 +37,7 @@ script:
   # test role tasks
   - docker exec --tty "$(cat ${container_id})" env TERM=xterm service supervisor status
   - docker exec --tty "$(cat ${container_id})" env TERM=xterm service supervisor stop
-  - docker exec --tty "$(cat ${container_id})" env TERM=xterm service supervisor status
+  - docker exec --tty "$(cat ${container_id})" env TERM=xterm service supervisor start
   - docker exec --tty "$(cat ${container_id})" env TERM=xterm supervisorctl start helloworld
 
 notifications:
