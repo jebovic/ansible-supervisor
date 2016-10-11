@@ -1,5 +1,9 @@
 ---
 
+# Supervisor install ocnfiguration
+supervisor_packages:
+  - supervisor
+
 # Supervisor basic configuration
 supervisor_socket: /tmp/supervisor.sock
 supervisor_pidfile: /var/run/supervisord.pid
