@@ -3,6 +3,8 @@
 # Supervisor install ocnfiguration
 supervisor_packages:
   - supervisor
+supervisor_pip_packages:
+  - superlance
 
 # Supervisor basic configuration
 supervisor_socket: /tmp/supervisor.sock
@@ -15,3 +17,6 @@ supervisor_http_password: supervisor
 
 # Supervisor programs
 supervisor_programs: []
+
+# Supervisor programs
+supervisor_events: []

@@ -9,6 +9,12 @@
     cache_valid_time:   300
   with_items: "{{ supervisor_packages }}"
 
+- name: install pip packages
+  pip:
+    name: "{{ item }}"
+  with_items: "{{ supervisor_pip_packages }}"
+
+
 - name: create directories
   file:
     path: "{{ item }}"
@@ -24,6 +30,7 @@
   with_items:
     - supervisord.conf
     - conf.d/programs.conf
+    - conf.d/events.conf
   notify:
     - restart supervisor
 

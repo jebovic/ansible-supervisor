@@ -1,0 +1,7 @@
+{% for event in supervisor_events|sort %}
+[eventlitener:{{event}}]
+{% for key in supervisor_events[event]|sort %}
+{{ key }} = {{ supervisor_events[event][key] }}
+{% endfor %}
+
+{% endfor %}
