@@ -4,6 +4,7 @@
   roles:
     - role_under_test
   vars:
+    supervisor_pip_packages: []
     supervisor_programs:
       helloworld:
         command: /bin/cat
