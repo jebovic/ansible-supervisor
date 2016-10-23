@@ -22,6 +22,7 @@
   with_items:
     - /etc/supervisor/conf.d
     - /var/log/supervisord
+  tags: supervisor_config
 
 - name: config
   template:
@@ -33,6 +34,7 @@
     - conf.d/events.conf
   notify:
     - restart supervisor
+  tags: supervisor_config
 
 - name: service start
   service:

@@ -8,7 +8,7 @@ Install and configure supervisor, you can add your own programs with yaml variab
 Role Variables
 --------------
 
-```
+```yaml
 # Supervisor basic configuration
 supervisor_socket: /tmp/supervisor.sock
 supervisor_pidfile: /var/run/supervisord.pid
@@ -30,11 +30,16 @@ supervisor_programs:
 Example Playbook
 ----------------
 
+```yaml
+- hosts: servers
+  roles:
+     - { role: jebovic.supervisor }
 ```
-    - hosts: servers
-      roles:
-         - { role: jebovic.supervisor }
-```
+
+Tags
+----
+
+* supervisor_config : only update config and restart service
 
 License
 -------
