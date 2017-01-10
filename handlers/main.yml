@@ -1,6 +1,10 @@
 ---
 
 - name: restart supervisor
+  command: "supervisorctl stop all"
+  notify: do restart supervisor
+
+- name: do restart supervisor
   service:
     name:  supervisor
     state: restarted
