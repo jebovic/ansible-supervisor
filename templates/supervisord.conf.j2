@@ -2,7 +2,7 @@
 file={{ supervisor_socket }}
 
 [inet_http_server]
-port={{ ansible_host }}:{{ supervisor_http_port }}
+port={{ supervisor_http_host|default(ansible_host) }}:{{ supervisor_http_port }}
 username={{ supervisor_http_username }}
 password={{ supervisor_http_password }}
 
