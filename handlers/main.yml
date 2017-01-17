@@ -6,5 +6,5 @@
 
 - name: do restart supervisor
   service:
-    name:  supervisor
+    name: supervisor
     state: restarted
