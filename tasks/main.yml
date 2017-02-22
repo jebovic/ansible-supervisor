@@ -18,6 +18,7 @@
   file:
     path: "{{ item }}"
     state: directory
+    owner: "{{ supervisor_user }}"
   with_items:
     - /etc/supervisor/conf.d
     - /var/log/supervisord
@@ -27,6 +28,7 @@
   template:
     src: "{{ item }}.j2"
     dest: "/etc/supervisor/{{ item }}"
+    owner: "{{ supervisor_user }}"
   with_items:
     - supervisord.conf
     - conf.d/programs.conf

@@ -15,6 +15,7 @@ pidfile={{ supervisor_pidfile }}
 nodaemon=false
 minfds=1024
 minprocs=200
+user={{ supervisor_user|default('root') }}
 
 [rpcinterface:supervisor]
 supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
