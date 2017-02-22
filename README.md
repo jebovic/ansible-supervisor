@@ -27,6 +27,7 @@ supervisor_pip_packages:
   - superlance
 
 # Supervisor basic configuration
+supervisor_user: root
 supervisor_socket: /tmp/supervisor.sock
 supervisor_pidfile: /var/run/supervisord.pid
 supervisor_log_path: /var/log/supervisord
@@ -57,6 +58,7 @@ Example : config
 
 ```yaml
 # supervisor UI ip & port bindig
+supervisor_user: supervisor
 supervisor_http_host: 127.0.0.1
 supervisor_http_port: 9988
 # supervisor programs configuration
@@ -71,6 +73,7 @@ supervisor_programs:
     stdout_logfile: "{{ supervisor_log_path }}/traefik-stdout.log"
     stdout_logfile_maxbytes: 1MB
     stdout_logfile_backups: 10
+    user: root
   consul:
     command: "{{ consul_bin_path }} agent -ui -bind={{ ansible_host }} -client=0.0.0.0 -node={{ ansible_fqdn }} -bootstrap -server -http-port {{ consul_http_port }} -data-dir={{ consul_data_dir }} -config-dir={{ consul_config_dir }} -domain={{ ansible_fqdn }}."
     autostart: "true"
@@ -81,11 +84,13 @@ supervisor_programs:
     stdout_logfile: "{{ supervisor_log_path }}/consul-stdout.log"
     stdout_logfile_maxbytes: 1MB
     stdout_logfile_backups: 10
+    user: root
   mailhog:
     command: /usr/local/bin/mailhog -api-bind-addr :8025 -ui-bind-addr :8025
     autostart: "true"
     autorestart: "true"
     stderr_logfile: "{{ supervisor_log_path }}/mailhog-stderr.log"
+    user: www-data
 
 # supervisor events configuration (depend on superlance plugin installation)
 supervisor_events:
